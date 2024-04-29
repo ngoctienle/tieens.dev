@@ -24,6 +24,7 @@ export default {
   ignorePatterns: ['dist', '.eslintrc.*'],
   rules: {
     'no-alert': 0,
+    'react/prop-types': 0,
     camelcase: 0,
     'no-console': 0,
     'no-unused-vars': 0,

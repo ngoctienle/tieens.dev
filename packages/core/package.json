@@ -1,0 +1,51 @@
+{
+  "name": "@tieens-org/core",
+  "version": "1.0.0",
+  "description": "A collection of core components",
+  "license": "MIT",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "clean": "rimraf dist .turbo *.tsbuildinfo",
+    "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
+    "typecheck": "pnpm lint && tsc --noEmit"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.32.0",
+    "@tieens-org/hooks": "workspace:*",
+    "antd": "^5.16.4",
+    "dayjs": "^1.11.11",
+    "lodash": "^4.17.21",
+    "nprogress": "^0.2.0",
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@tanstack/react-query-devtools": "^5.32.0",
+    "@tieens-org/eslint-config": "workspace:*",
+    "@tieens-org/ts-config": "workspace:*",
+    "@types/lodash": "^4.17.0",
+    "@types/nprogress": "^0.2.3",
+    "@types/react": "18.2.73",
+    "eslint": "^8.57.0",
+    "tsup": "^8.0.2"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
