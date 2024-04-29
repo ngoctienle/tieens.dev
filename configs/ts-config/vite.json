@@ -1,7 +1,6 @@
 {
   "extends": "./base.json",
   "compilerOptions": {
-    "baseUrl": ".",
     "types": ["vite/client"],
     "target": "ES5",
     "lib": ["dom", "dom.iterable", "esnext"],

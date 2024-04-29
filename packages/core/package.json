@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "A collection of core components",
   "license": "MIT",
-  "sideEffects": false,
   "exports": {
     ".": {
       "require": "./dist/index.js",
@@ -18,8 +17,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup",
-    "clean": "rimraf dist .turbo *.tsbuildinfo",
+    "build": "rimraf dist && tsup",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
     "typecheck": "pnpm lint && tsc --noEmit"
   },
