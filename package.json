@@ -1,0 +1,63 @@
+{
+  "name": "tieens.dev",
+  "private": true,
+  "scripts": {
+    "bootstrap": "pnpm install",
+    "build": "turbo build",
+    "clean": "turbo run clean",
+    "commit": "czg",
+    "dev": "turbo dev",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\" --ignore-path .prettierignore",
+    "gen-hook": "turbo gen hook --config \"libs/config.cts\" && pnpm format",
+    "preinstall": "npx only-allow pnpm",
+    "postinstall": "pnpm setup:configs && pnpm setup:pkg",
+    "lint": "turbo lint",
+    "prepare": "husky install",
+    "setup:configs": "turbo run stub",
+    "setup:pkg": "turbo run build --filter=@tieens-org/hooks",
+    "test:hooks": "turbo run test --filter=@tieens-org/hooks",
+    "type-check": "turbo typecheck"
+  },
+  "lint-staged": {
+    "apps/**/*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "{!(package)*.json,*.code-snippets,.!(browserslist)*rc}": [
+      "prettier --write--parser json"
+    ],
+    "package.json": [
+      "prettier --write"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@tieens-org/eslint-config": "workspace:*",
+    "@turbo/gen": "^1.13.3",
+    "@types/node": "^20.12.7",
+    "cz-git": "^1.9.1",
+    "czg": "^1.9.1",
+    "date-fns": "^3.6.0",
+    "dotenv": "^16.4.5",
+    "eslint": "^8.55.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5",
+    "prettier-plugin-packagejson": "^2.5.0",
+    "prettier-plugin-tailwindcss": "^0.5.14",
+    "rimraf": "^5.0.5",
+    "turbo": "latest",
+    "typescript": "^5.4.5"
+  },
+  "packageManager": "pnpm@8.9.0",
+  "engines": {
+    "node": ">=16.x",
+    "pnpm": ">=8.x"
+  }
+}
