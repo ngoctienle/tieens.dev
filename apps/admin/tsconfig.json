@@ -1,0 +1,13 @@
+{
+  "extends": "@tieens-org/ts-config/vite.json",
+  "compilerOptions": {
+    "baseUrl": "."
+  },
+  "include": ["**/*.ts", "**/*.tsx", "src/**/*", ".eslintrc.cjs"],
+  "exclude": ["node_modules", "tailwind.config.ts"],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
+}

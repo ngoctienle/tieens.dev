@@ -1,0 +1,5 @@
+{
+  "extends": "@tieens-org/ts-config/node.json",
+  "include": ["src", ".eslintrc.cjs", "tsup.config.ts"],
+  "exclude": ["dist", "node_modules"]
+}

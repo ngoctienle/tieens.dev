@@ -6,7 +6,7 @@
     "build": "turbo build",
     "clean": "turbo run clean",
     "commit": "czg",
-    "dev": "turbo dev",
+    "dev:admin": "turbo dev --filter @tieens-org/admin",
     "format": "prettier --write \"**/*.{ts,tsx,md}\" --ignore-path .prettierignore",
     "gen-hook": "turbo gen hook --config \"libs/config.cts\" && pnpm format",
     "preinstall": "npx only-allow pnpm",
@@ -14,7 +14,7 @@
     "lint": "turbo lint",
     "prepare": "husky install",
     "setup:configs": "turbo run stub",
-    "setup:pkg": "turbo run build --filter=@tieens-org/hooks",
+    "setup:pkg": "turbo run build --filter=@tieens-org/hooks --filter=@tieens-org/core",
     "test:hooks": "turbo run test --filter=@tieens-org/hooks",
     "type-check": "turbo typecheck"
   },
