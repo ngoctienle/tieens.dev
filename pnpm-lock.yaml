@@ -29,9 +29,6 @@ importers:
       czg:
         specifier: ^1.9.1
         version: 1.9.1
-      date-fns:
-        specifier: ^3.6.0
-        version: 3.6.0
       dotenv:
         specifier: ^16.4.5
         version: 16.4.5
@@ -235,6 +232,9 @@ importers:
       antd:
         specifier: ^5.16.4
         version: 5.16.5(date-fns@3.6.0)(react-dom@18.3.1)(react@18.3.1)
+      date-fns:
+        specifier: ^3.6.0
+        version: 3.6.0
       dayjs:
         specifier: ^1.11.11
         version: 1.11.11
@@ -3209,6 +3209,7 @@ packages:
 
   /date-fns@3.6.0:
     resolution: {integrity: sha512-fRHTG8g/Gif+kSh50gaGEdToemgfj74aRX3swtiouboip5JDLAyDE9F11nHMIcvOaXeOC6D7SpNhi7uFyB7Uww==}
+    dev: false
 
   /dayjs@1.11.11:
     resolution: {integrity: sha512-okzr3f11N6WuqYtZSvm+F776mB41wRZMhKP+hc34YdW+KmtYYK9iqvHSwo2k9FEH3fhGXvOPV6yz2IcSrfRUDg==}

@@ -1,24 +1,25 @@
-/* eslint-disable import/no-duplicates */
-import 'dayjs/locale/vi'
-// dayjs config
-import dayjs from 'dayjs'
-import merge from 'lodash/merge' // Import Vietnamese locale
-import 'dayjs/locale/en' // Import English locale
-import enUSDate from 'dayjs/plugin/localeData' // Import English locale data plugin
-import viVNDate from 'dayjs/plugin/localeData' // Import Vietnamese locale data plugin
-import utc from 'dayjs/plugin/utc' // Import UTC plugin
-
+import merge from 'lodash/merge'
+// core (antd)
 import viVNCore from 'antd/lib/locale/vi_VN'
 import enUSCore from 'antd/lib/locale/en_US'
-// core (antd)
 import type { Locale } from 'antd/lib/locale'
+import viVNDate from 'antd/lib/date-picker/locale/vi_VN'
+import enUSDate from 'antd/lib/date-picker/locale/en_US'
+import viVNCalendar from 'antd/lib/calendar/locale/vi_VN'
+import enUSCalendar from 'antd/lib/calendar/locale/en_US'
+// date fns
+import {
+  vi as viVNAdapter,
+  enUS as enUSAdapter,
+  type Locale as LocaleDateFNS
+} from 'date-fns/locale'
 
 // Interface for language object
 export interface Language {
   label: string
   value: string
   systemValue: Locale
-  adapterLocale: string
+  adapterLocale: LocaleDateFNS
   icon: string
   numberFormat: {
     code: string
@@ -26,16 +27,12 @@ export interface Language {
   }
 }
 
-// Register dayjs locale data plugins
-dayjs.extend(enUSDate)
-dayjs.extend(viVNDate)
-dayjs.extend(utc)
 export const allLangs: Language[] = [
   {
     label: 'Vietnamese',
     value: 'vi',
-    systemValue: merge({}, viVNCore, viVNDate), // Merge Vietnamese locale data
-    adapterLocale: 'vi', // Dayjs uses string identifiers for locales
+    systemValue: merge(viVNCalendar, viVNDate, viVNCore), // Merge Vietnamese locale data
+    adapterLocale: viVNAdapter,
     icon: 'flagpack:vn',
     numberFormat: {
       code: 'vi-VN',
@@ -45,8 +42,8 @@ export const allLangs: Language[] = [
   {
     label: 'English',
     value: 'en',
-    systemValue: merge({}, enUSCore, enUSDate), // Merge English locale data
-    adapterLocale: 'en', // Dayjs uses string identifiers for locales
+    systemValue: merge(enUSCalendar, enUSDate, enUSCore), // Merge English locale data
+    adapterLocale: enUSAdapter,
     icon: 'flagpack:gb-nir',
     numberFormat: {
       code: 'en-US',

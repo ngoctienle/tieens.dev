@@ -25,6 +25,7 @@
     "@tanstack/react-query": "^5.32.0",
     "@tieens-org/hooks": "workspace:*",
     "antd": "^5.16.4",
+    "date-fns": "^3.6.0",
     "dayjs": "^1.11.11",
     "lodash": "^4.17.21",
     "nprogress": "^0.2.0",
