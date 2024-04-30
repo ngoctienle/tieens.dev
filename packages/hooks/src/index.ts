@@ -21,3 +21,5 @@ export * from './use-local-storage'
 export * from './use-event-callback'
 
 export * from './use-media-query'
+
+export * from './use-read-local-storage'

@@ -2,7 +2,7 @@ import type { Config } from 'tailwindcss'
 import sharedConfig from '@tieens-org/tailwind-config'
 
 const config: Pick<Config, 'prefix' | 'presets' | 'content'> = {
-  content: ['./src/**/*.tsx'],
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   prefix: 'org-',
   presets: [sharedConfig]
 }

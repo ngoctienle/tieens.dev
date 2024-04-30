@@ -1,5 +1,4 @@
 import type { PlopTypes } from '@turbo/gen'
-import { format } from 'date-fns'
 import path from 'path'
 
 export default function generator(plop: PlopTypes.NodePlopAPI): void {

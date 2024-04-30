@@ -1,5 +1,5 @@
 import { Input } from 'antd'
-import { useAppLocales, ApplicationProvider } from '@tieens-org/core'
+import { ApplicationProvider } from '@tieens-org/core'
 
 //= Global Css ========================
 import 'src/app.css'
@@ -9,15 +9,9 @@ import 'src/app.css'
 //= Application =======================
 
 function App() {
-  const { currentLang } = useAppLocales()
-
   return (
-    <ApplicationProvider
-      primary='#01D253'
-      componentSize='middle'
-      prefixCls='org'
-      locale={currentLang.systemValue}
-    >
+    <ApplicationProvider primary='#01D253' componentSize='middle' prefixCls='org'>
+      <h1 className='org-text-red-500'>Hello world!</h1>
       <Input placeholder='hello input' />
     </ApplicationProvider>
   )

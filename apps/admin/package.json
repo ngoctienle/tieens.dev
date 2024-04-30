@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc && vite build",
     "dev": "vite --clearScreen false",
-    "lint": "eslint -c .eslintrc.cjs ./src/**/*.{js,jsx,ts,tsx}",
+    "lint": "eslint -c .eslintrc.cjs \"src/**/*.{js,jsx,ts,tsx}\"",
     "typecheck": "pnpm lint && tsc --noEmit"
   },
   "dependencies": {

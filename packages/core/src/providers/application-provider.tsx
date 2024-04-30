@@ -3,7 +3,10 @@ import type { ThemeConfig, ConfigProviderProps } from 'antd/lib'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
-interface IApplicationProviderProps extends Omit<ConfigProviderProps, 'token' | 'components'> {
+import { useAppLocales } from '../locales'
+
+interface IApplicationProviderProps
+  extends Omit<ConfigProviderProps, 'token' | 'components' | 'locale'> {
   primary: string
   config?: ThemeConfig['components']
   onInit?: () => void
@@ -26,9 +29,10 @@ const ApplicationProvider: React.FC<IApplicationProviderProps> = ({
   config,
   ...others
 }) => {
+  const { currentLang } = useAppLocales()
+
   const charAt = `🚀 Hello Application`
   console.info(`%c${charAt}`, `color: ${primary}`)
-  if (onInit) onInit()
 
   return (
     <ConfigProvider
@@ -40,6 +44,7 @@ const ApplicationProvider: React.FC<IApplicationProviderProps> = ({
         },
         components: config
       }}
+      locale={currentLang.systemValue}
     >
       <QueryClientProvider client={queryClient}>
         {children}
